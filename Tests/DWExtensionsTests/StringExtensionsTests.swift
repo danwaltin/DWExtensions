@@ -76,4 +76,16 @@ class StringExtensionsTests: XCTestCase {
 		XCTAssertEqual("\nline"  .allLines(), ["", "line"])
 		XCTAssertEqual("line\n"  .allLines(), ["line", ""])
 	}
+
+	func test_pathExtension() {
+		XCTAssertEqual("/path/file.txt"            .pathExtension(), "txt")
+		XCTAssertEqual("/path/fileWithoutExtension".pathExtension(), "")
+		XCTAssertEqual("/pathWithoutFile"          .pathExtension(), "")
+	}
+
+	func test_stringByDeletingPathExtension() {
+		XCTAssertEqual("/path/file.txt"            .stringByDeletingPathExtension(), "/path/file")
+		XCTAssertEqual("/path/fileWithoutExtension".stringByDeletingPathExtension(), "/path/fileWithoutExtension")
+		XCTAssertEqual("/pathWithoutFile"          .stringByDeletingPathExtension(), "/pathWithoutFile")
+	}
 }

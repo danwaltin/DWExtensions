@@ -84,16 +84,16 @@ public extension String {
 	}
 }
 
-extension String {
-	func pathExtension() -> String {
+public extension String {
+	public func pathExtension() -> String {
 		return asNSString().pathExtension
 	}
 	
-	func stringByDeletingPathExtension() -> String {
+	public func stringByDeletingPathExtension() -> String {
 		return asNSString().deletingPathExtension
 	}
 	
-	func asNSString() -> NSString {
+	public func asNSString() -> NSString {
 		return NSString(string: self)
 	}
 }
